@@ -3,7 +3,7 @@ import express, { Response } from "express";
 import { TypesNote } from "./types";
 const Verification = require("App/Middleware/Verification");
 const CompletedNotes = require("App/Models/completedNotes");
-const Note = require("App/Models/note");
+const Notes = require("App/Models/Notes");
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.get("/allnotes", Verification, async (req: any, res) => {
     if (req.path.includes("mystring")) {
       res.send('The current pathname includes "mystring"');
     }
-    const notes = await Note.find({ user: req.userID });
+    const notes = await Notes.find({ user: req.userID });
     res.json(notes);
   } catch (err) {
     if (err instanceof Error) {
@@ -51,7 +51,7 @@ router.post("/addnote", Verification, async (req: any, res: Response) => {
     if (!title || !description || !category) {
       return res.status(404).json({ message: "You've left an tag empty" });
     } else {
-      const note = new Note({
+      const note = new Notes({
         title,
         description,
         category,
@@ -83,14 +83,14 @@ router.put("/updatenote/:id", Verification, async (req: any, res: Response) => {
       newNote.isCompleted = isCompleted;
     }
     let note: any, savedNote: any, state: any, hold: any, main: any;
-    if (await Note.findById(req.params.id)) {
-      main = Note;
+    if (await Notes.findById(req.params.id)) {
+      main = Notes;
       state = true;
       hold = CompletedNotes;
     } else if (await CompletedNotes.findById(req.params.id)) {
       main = CompletedNotes;
       state = false;
-      hold = Note;
+      hold = Notes;
     }
     note = await main.findById(req.params.id);
     if (!note) {
@@ -136,8 +136,8 @@ router.delete(
   async (req: any, res: Response) => {
     try {
       let note: any, main: any;
-      if (await Note.findById(req.params.id)) {
-        main = Note;
+      if (await Notes.findById(req.params.id)) {
+        main = Notes;
       } else if (await CompletedNotes.findById(req.params.id)) {
         main = CompletedNotes;
       }
