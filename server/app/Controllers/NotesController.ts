@@ -1,3 +1,4 @@
+import { TypesNote } from "@routes/notes/types";
 import { Response } from "express";
 const Contact = require("@app/Models/User");
 const Notes = require("@app/Models/Notes");
