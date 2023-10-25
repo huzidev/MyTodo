@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon",
+    "start": "nodemon -r tsconfig-paths/register",
     "dev": "nodemon index",
     "stage": "node index",
     "prod": "node index"

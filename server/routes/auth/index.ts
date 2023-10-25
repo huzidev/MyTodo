@@ -6,9 +6,9 @@ import { TypesUser } from "./types";
 // const Verification = require('../../app/Middleware/Verification');
 // const Contact = require('../../app/Models/Message');
 // const User = require('../../app/Models/Message');
-const Verification = require("App/Middleware/Verification");
-const Contact = require("App/Models/userMessage");
-const User = require("App/Models/userMessage");
+const Verification = require("@app/Middleware/Verification");
+const Contact = require("@app/Models/userMessage");
+const User = require("@app/Models/userMessage");
 
 require("Database/connection");
 
