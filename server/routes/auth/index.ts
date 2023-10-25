@@ -7,10 +7,10 @@ import { TypesUser } from "./types";
 // const Contact = require('../../app/Models/Message');
 // const User = require('../../app/Models/Message');
 const Verification = require("@app/Middleware/Verification");
-const Contact = require("@app/Models/userMessage");
-const User = require("@app/Models/userMessage");
+const Contact = require("@app/Models/User");
+const User = require("@app/Models/User");
 
-require("Database/connection");
+require("@database/connection");
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 import { NextFunction, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { VerifyRequest } from './types';
-const User = require("@models/userSchema");
+const User = require("@app/Models/User");
 
 const Verification = async (req: VerifyRequest, res: Response, next: NextFunction) => {
     try {
