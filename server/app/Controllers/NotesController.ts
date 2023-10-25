@@ -23,6 +23,7 @@ const NotesController = {
     }
   },
 
+  // Fetch All Completed Notes
   GetCompletedNotes: async (req: any, res: Response) => {
     try {
       const notes = await CompletedNotes.find({ user: req.userID });
