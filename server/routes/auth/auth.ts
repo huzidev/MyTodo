@@ -3,7 +3,7 @@ import cookie from "cookie-parser";
 import cors from "cors";
 import express, { Response } from "express";
 import { TypesUser } from "./types";
-const Verification = require("App/middleware/Verification");
+const Verification = require("App/Middleware/Verification");
 const Contact = require("App/Models/userMessage");
 const User = require("App/Models/userMessage");
 
