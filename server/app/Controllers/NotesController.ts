@@ -126,6 +126,33 @@ const NotesController = {
       return res.status(500).send("Failed! Internal Server Error");
     }
   },
+
+  DeleteNote: async (req: any, res: Response) => {
+    try {
+      let note: any, main: any;
+      if (await Notes.findById(req.params.id)) {
+        main = Notes;
+      } else if (await CompletedNotes.findById(req.params.id)) {
+        main = CompletedNotes;
+      }
+      note = await main.findById(req.params.id);
+      if (!note) {
+        return res.status(404).json({ error: "Not Found" });
+      }
+      if (note.user.toString() !== req.userID.toString()) {
+        return res.status(401).send("Not Allowed");
+      }
+      note = await main.findByIdAndDelete(req.params.id);
+      return res.status(200).json({ message: "Note Deleted", note: note });
+    } catch (err) {
+      if (err instanceof Error) {
+        console.error(err.message);
+      } else {
+        console.error(String(err));
+      }
+      return res.status(500).send("Failed! Internal Server Error");
+    }
+  }
 };
 
 module.exports = NotesController;
