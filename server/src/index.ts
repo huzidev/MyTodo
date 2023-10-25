@@ -5,16 +5,12 @@ import dotenv from "dotenv";
 import express, { Express, Response } from "express";
 
 dotenv.config({ path: "config.env" });
-// require("Database/connection.ts");
 require("@database/connection");
-// require('../database/connection');
 
 const server: Express = express();
 const port: number = 8000;
 
 server.use(express.json());
-// server.use(require("Router/auth"));
-// server.use(require("Router/notes"));
 server.use(require("@routes/auth"));
 server.use(require("@routes/notes"));
 
