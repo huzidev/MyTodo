@@ -37,6 +37,7 @@ const UserController = {
     }
   },
 
+  // Contact Us Function
   Contact: async (req: any, res: Response) => {
   try {
     const { username, email, number, message } = req.body;
