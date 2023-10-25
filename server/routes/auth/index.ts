@@ -26,6 +26,8 @@ router.post('/', (req: any, res: Response) => {
 
 router.post("/sign_up", AuthController.SignUp);
 router.post("/sign_in", AuthController.SignIn);
+router.get("/sign_out", AuthController.SignOut);
+
 
 router.post("/contact", async (req: any, res: Response) => {
   try {
@@ -88,7 +90,7 @@ router.put("/updateuser/:id", Verification, async (req: any, res: Response) => {
   }
 });
 
-router.get("/sign_out", AuthController.SignOut);
+
 
 router.get("/about", Verification, (req: any, res: Response) => {
   return res.json(req.userInfo);

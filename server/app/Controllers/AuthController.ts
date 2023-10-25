@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import { Response } from "express";
 const User = require("@app/Models/User");
 
