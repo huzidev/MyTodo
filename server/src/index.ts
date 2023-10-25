@@ -12,6 +12,7 @@ const port: number = 8000;
 
 server.use(express.json());
 server.use(require("@routes/auth"));
+server.use(require("@routes/user"));
 server.use(require("@routes/notes"));
 
 server.use(

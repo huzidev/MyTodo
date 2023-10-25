@@ -67,6 +67,7 @@ const UserController = {
     }
   },
 
+  // About Details Function
   About: (req: any, res: Response) => {
     return res.json(req.userInfo);
   },
