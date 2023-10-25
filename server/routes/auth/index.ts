@@ -9,14 +9,14 @@ const router = express.Router();
 
 router.use(
   cors({
-    origin: '*',
+    origin: "*",
   })
 );
 
 router.use(express.urlencoded({ extended: false }));
 router.use(cookie());
 
-router.post('/', (req: any, res: Response) => {
+router.post("/", (req: any, res: Response) => {
   res.send("Home page");
 });
 
@@ -24,7 +24,4 @@ router.post("/sign_up", AuthController.SignUp);
 router.post("/sign_in", AuthController.SignIn);
 router.get("/sign_out", AuthController.SignOut);
 
-
-
-
-module.exports = router;
+// module.exports = router;

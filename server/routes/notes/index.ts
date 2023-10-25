@@ -17,4 +17,4 @@ router.post("/addnote", Verification, NotesController.AddNote);
 router.put("/updatenote/:id", Verification, NotesController.UpdateNote);
 router.delete("/deletenote/:id", Verification, NotesController.DeleteNote);
 
-module.exports = router;
+// module.exports = router;

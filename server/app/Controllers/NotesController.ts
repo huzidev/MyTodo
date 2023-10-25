@@ -152,7 +152,7 @@ const NotesController = {
       }
       return res.status(500).send("Failed! Internal Server Error");
     }
-  }
+  },
 };
 
 module.exports = NotesController;
