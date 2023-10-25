@@ -92,6 +92,11 @@ const AuthController = {
       console.log(err);
     }
   },
+
+  SignOut: async (req: any, res: Response) => {
+    res.clearCookie("jwtoken", { path: "/" });
+    res.status(200).send("User loggedOut Successfully!");
+}
 };
 
 module.exports = AuthController;

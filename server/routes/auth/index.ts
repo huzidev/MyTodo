@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 import cookie from "cookie-parser";
 import cors from "cors";
 import express, { Response } from "express";
@@ -26,39 +25,7 @@ router.post('/', (req: any, res: Response) => {
 });
 
 router.post("/sign_up", AuthController.SignUp);
-
-router.post("/sign_in", async (req: any, res: Response) => {
-  try {
-    let token: string;
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(421).json({ error: "You've left an tag empty" });
-    }
-    const userEmail: any = await User.findOne({ email: email });
-    if (!userEmail) {
-      return res.status(422).json({ error: "No Such Email is Found!" });
-    } else if (userEmail) {
-      const isMatchPassword = await bcrypt.compare(
-        password,
-        userEmail.password
-      );
-      if (!isMatchPassword) {
-        return res.status(423).json({ error: "Password is incorrect" });
-      } else {
-        token = await userEmail.generateAuthToken();
-        res.cookie("jwtoken", token, {
-          // expires : new Date(Date.now() + 86400000), // after 24 hours
-          httpOnly: true,
-        });
-        return res.status(201).json({ message: "User loggedIn successfully" });
-      }
-    } else {
-      return res.status(500).json({ message: "Failed! Internal Server Error" });
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
+router.post("/sign_in", AuthController.SignIn);
 
 router.post("/contact", async (req: any, res: Response) => {
   try {
@@ -121,10 +88,7 @@ router.put("/updateuser/:id", Verification, async (req: any, res: Response) => {
   }
 });
 
-router.get("/sign_out", (req: any, res: Response) => {
-  res.clearCookie("jwtoken", { path: "/" });
-  res.status(200).send("User loggedOut Successfully!");
-});
+router.get("/sign_out", AuthController.SignOut);
 
 router.get("/about", Verification, (req: any, res: Response) => {
   return res.json(req.userInfo);
