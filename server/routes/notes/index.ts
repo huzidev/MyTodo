@@ -4,9 +4,6 @@ import { TypesNote } from "./types";
 const Verification = require("@app/Middleware/Verification");
 const CompletedNotes = require("@app/Models/completedNotes");
 const Notes = require("@app/Models/Notes");
-// const Verification = require('../../app/Middleware/Verification');
-// const CompletedNotes = require('../../app/Models/completedNotes');
-// const Notes = require('../../app/Models/Notes');
 
 const router = express.Router();
 
