@@ -11,8 +11,8 @@ const server: Express = express();
 const port: number = 8000;
 
 server.use(express.json());
-server.use(require("../router/auth"));
-server.use(require("../router/notes"));
+server.use(require("Router/auth"));
+server.use(require("Router/notes"));
 
 server.use(
   cors({
