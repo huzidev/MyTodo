@@ -39,33 +39,37 @@ const UserController = {
 
   // Contact Us Function
   Contact: async (req: any, res: Response) => {
-  try {
-    const { username, email, number, message } = req.body;
+    try {
+      const { username, email, number, message } = req.body;
 
-    if (!username) {
-      return res.status(422).json({ error: "Username must be provide" });
-    } else if (!email) {
-      return res.status(423).json({ error: "Email must be provide" });
-    } else if (!message) {
-      return res.status(424).json({ error: "Mesasge field is empty" });
-    }
-    const userMessage = new Contact({
-      username,
-      email,
-      number: number === null ? null : "+92" + number,
-      message,
-    });
-    const userResponse = await userMessage.save();
+      if (!username) {
+        return res.status(422).json({ error: "Username must be provide" });
+      } else if (!email) {
+        return res.status(423).json({ error: "Email must be provide" });
+      } else if (!message) {
+        return res.status(424).json({ error: "Mesasge field is empty" });
+      }
+      const userMessage = new Contact({
+        username,
+        email,
+        number: number === null ? null : "+92" + number,
+        message,
+      });
+      const userResponse = await userMessage.save();
 
-    if (userResponse) {
-      return res.status(200).json({ message: "Message Sent Successfully!" });
-    } else {
-      return res.status(500).json({ error: "Failed! Internal Server Error" });
+      if (userResponse) {
+        return res.status(200).json({ message: "Message Sent Successfully!" });
+      } else {
+        return res.status(500).json({ error: "Failed! Internal Server Error" });
+      }
+    } catch (err) {
+      console.log(err);
     }
-  } catch (err) {
-    console.log(err);
-  }
-}
+  },
+
+  About: (req: any, res: Response) => {
+    return res.json(req.userInfo);
+  },
 };
 
 module.exports = UserController;
