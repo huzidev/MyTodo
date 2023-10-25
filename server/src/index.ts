@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import express, { Express, Response } from "express";
 
 dotenv.config({ path: "config.env" });
-require("../db/connection.ts");
+require("Database/connection");
 
 const server: Express = express();
 const port: number = 8000;
