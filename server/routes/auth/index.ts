@@ -25,9 +25,9 @@ router.post('/', (req: any, res: Response) => {
   res.send("Home page");
 });
 
-router.post("/signup", AuthController.SignUp);
+router.post("/sign_up", AuthController.SignUp);
 
-router.post("/signin", async (req: any, res: Response) => {
+router.post("/sign_in", async (req: any, res: Response) => {
   try {
     let token: string;
     const { email, password } = req.body;
@@ -121,7 +121,7 @@ router.put("/updateuser/:id", Verification, async (req: any, res: Response) => {
   }
 });
 
-router.get("/signout", (req: any, res: Response) => {
+router.get("/sign_out", (req: any, res: Response) => {
   res.clearCookie("jwtoken", { path: "/" });
   res.status(200).send("User loggedOut Successfully!");
 });
