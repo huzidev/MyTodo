@@ -12,7 +12,7 @@ const Verification = async (req: VerifyRequest, res: Response, next: NextFunctio
             "tokens.token": token // in mongoDB we've tokens in which token and :token is defined here
         })
         if (!userInfo) {
-            res.status(404).send("User Not Found")
+            res.status(404).send("User Not Found");
         }
         req.token = req.cookies.jwtoken;
         req.userInfo = userInfo;
