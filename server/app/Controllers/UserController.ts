@@ -1,5 +1,6 @@
 import { TypesUser } from "@routes/user/types";
 import { Response } from "express";
+const Contact = require("@app/Models/User");
 const User = require("@app/Models/User");
 
 const UserController = {
@@ -35,6 +36,35 @@ const UserController = {
       console.log(e);
     }
   },
+
+  Contact: async (req: any, res: Response) => {
+  try {
+    const { username, email, number, message } = req.body;
+
+    if (!username) {
+      return res.status(422).json({ error: "Username must be provide" });
+    } else if (!email) {
+      return res.status(423).json({ error: "Email must be provide" });
+    } else if (!message) {
+      return res.status(424).json({ error: "Mesasge field is empty" });
+    }
+    const userMessage = new Contact({
+      username,
+      email,
+      number: number === null ? null : "+92" + number,
+      message,
+    });
+    const userResponse = await userMessage.save();
+
+    if (userResponse) {
+      return res.status(200).json({ message: "Message Sent Successfully!" });
+    } else {
+      return res.status(500).json({ error: "Failed! Internal Server Error" });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 };
 
 module.exports = UserController;

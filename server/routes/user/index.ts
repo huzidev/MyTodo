@@ -1,10 +1,10 @@
 import cors from "cors";
 import express, { Response } from "express";
-import { TypesUser } from "./types";
 const router = express.Router();
 const Verification = require("@app/Middleware/Verification");
 const Contact = require("@app/Models/User");
 const User = require("@app/Models/User");
+const UserController = require("@app/Controllers/UserController");
 
 router.use(
   cors({
@@ -41,37 +41,7 @@ router.post("/contact", async (req: any, res: Response) => {
   }
 });
 
-router.put("/updateuser/:id", Verification, async (req: any, res: Response) => {
-  const { username, email, number, isTheme } = req.body;
-  try {
-    const newInfo = <TypesUser>{};
-    if (username) {
-      newInfo.username = username;
-    }
-    if (email) {
-      newInfo.email = email;
-    }
-    if (number) {
-      newInfo.number = number;
-    }
-    if (!isTheme || isTheme) {
-      newInfo.isTheme = isTheme;
-    }
-    let info = await User.findById(req.params.id);
-    console.log("what is info", info);
-    if (!info) {
-      return res.status(404).json({ error: "Not Found" });
-    }
-    info = await User.findByIdAndUpdate(
-      req.params.id,
-      { $set: newInfo },
-      { new: true }
-    );
-    res.json({ info });
-  } catch (e) {
-    console.log(e);
-  }
-});
+router.put("/updateuser/:id", UserController.Update);
 
 
 
