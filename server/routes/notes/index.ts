@@ -3,7 +3,7 @@ import express, { Response } from "express";
 import { TypesNote } from "./types";
 const Verification = require("@app/Middleware/Verification");
 const CompletedNotes = require("@app/Models/completedNotes");
-const Notes = require("@app/Models/Notes");
+const NotesController = require("@app/Controllers/NotesController");
 
 const router = express.Router();
 
@@ -13,22 +13,7 @@ router.use(
   })
 );
 
-router.get("/allnotes", Verification, async (req: any, res) => {
-  try {
-    if (req.path.includes("mystring")) {
-      res.send('The current pathname includes "mystring"');
-    }
-    const notes = await Notes.find({ user: req.userID });
-    res.json(notes);
-  } catch (err) {
-    if (err instanceof Error) {
-      console.error(err.message);
-    } else {
-      console.error(String(err));
-    }
-    return res.status(500).send("Failed! Internal Server Error");
-  }
-});
+router.get("/allnotes", Verification, NotesController.GetNotes);
 
 router.get("/completednotes", Verification, async (req: any, res) => {
   try {

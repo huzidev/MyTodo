@@ -20,6 +20,20 @@ const NotesController = {
     }
     return res.status(500).send("Failed! Internal Server Error");
   }
+},
+
+GetCompletedNotes: async (req: any, res) => {
+  try {
+    const notes = await CompletedNotes.find({ user: req.userID });
+    res.json(notes);
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(err.message);
+    } else {
+      console.error(String(err));
+    }
+    return res.status(500).send("Failed! Internal Server Error");
+  }
 }
 };
 
