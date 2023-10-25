@@ -3,11 +3,11 @@ import cookie from "cookie-parser";
 import cors from "cors";
 import express, { Response } from "express";
 import { TypesUser } from "./types";
-const Verification = require("../app/middleware/Verification");
-const Contact = require("../models/userMessage");
-const User = require("../models/userSchema");
+const Verification = require("App/middleware/Verification");
+const Contact = require("App/Models/userMessage");
+const User = require("App/Models/userMessage");
 
-require("../db/connection.ts");
+require("Database/connection");
 
 const router = express.Router();
 

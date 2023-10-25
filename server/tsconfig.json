@@ -33,9 +33,6 @@
       "App/*": [
         "./app/*"
       ],
-      "Models/*": [
-        "./models/*"
-      ],
       "Router/*": [
         "./router/*"
       ],
