@@ -25,6 +25,10 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cookie());
 
+server.post("/", (req: any, res: Response) => {
+  res.send("Home page");
+});
+
 server.get('*', (req, res: Response) => {
   res.send({ message: "Hello, world" });
 });
