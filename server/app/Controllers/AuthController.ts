@@ -2,7 +2,7 @@ import { Response } from "express";
 const User = require("@app/Models/User");
 
 
-const ArticlesController = (module.exports = {
+const AuthController = {
   SignUp: async (req: any, res: Response) => {
     const { username, email, number, password, cpassword, isTheme } = req.body;
     if (!username || !email || !number || !password || !cpassword) {
@@ -54,4 +54,6 @@ const ArticlesController = (module.exports = {
       console.log(err);
     }
   },
-});
+};
+
+module.exports = AuthController;
