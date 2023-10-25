@@ -2,7 +2,6 @@ import cors from "cors";
 import express, { Response } from "express";
 import { TypesNote } from "./types";
 const Verification = require("@app/Middleware/Verification");
-const CompletedNotes = require("@app/Models/completedNotes");
 const NotesController = require("@app/Controllers/NotesController");
 
 const router = express.Router();
@@ -14,47 +13,9 @@ router.use(
 );
 
 router.get("/allnotes", Verification, NotesController.GetNotes);
+router.get("/completednotes", Verification, NotesController.GetCompletedNotes);
 
-router.get("/completednotes", Verification, async (req: any, res) => {
-  try {
-    const notes = await CompletedNotes.find({ user: req.userID });
-    res.json(notes);
-  } catch (err) {
-    if (err instanceof Error) {
-      console.error(err.message);
-    } else {
-      console.error(String(err));
-    }
-    return res.status(500).send("Failed! Internal Server Error");
-  }
-});
-
-router.post("/addnote", Verification, async (req: any, res: Response) => {
-  try {
-    const { title, description, category, isCompleted } = req.body;
-    console.log("Title is", title);
-    if (!title || !description || !category) {
-      return res.status(404).json({ message: "You've left an tag empty" });
-    } else {
-      const note = new Notes({
-        title,
-        description,
-        category,
-        isCompleted,
-        user: req.userID,
-      });
-      const savedNote = await note.save();
-      res.json(savedNote);
-    }
-  } catch (err) {
-    if (err instanceof Error) {
-      console.error(err.message);
-    } else {
-      console.error(String(err));
-    }
-    return res.status(500).send("Failed! Internal Server Error");
-  }
-});
+router.post("/addnote", Verification, NotesController.AddNote);
 
 router.put("/updatenote/:id", Verification, async (req: any, res: Response) => {
   const { title, description, category, isCompleted } = req.body;

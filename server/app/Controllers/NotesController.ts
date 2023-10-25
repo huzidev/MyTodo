@@ -37,6 +37,34 @@ const NotesController = {
       return res.status(500).send("Failed! Internal Server Error");
     }
   },
+
+  // Add Note Function
+  AddNote: async (req: any, res: Response) => {
+    try {
+      const { title, description, category, isCompleted } = req.body;
+      console.log("Title is", title);
+      if (!title || !description || !category) {
+        return res.status(404).json({ message: "You've left an tag empty" });
+      } else {
+        const note = new Notes({
+          title,
+          description,
+          category,
+          isCompleted,
+          user: req.userID,
+        });
+        const savedNote = await note.save();
+        res.json(savedNote);
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        console.error(err.message);
+      } else {
+        console.error(String(err));
+      }
+      return res.status(500).send("Failed! Internal Server Error");
+    }
+  },
 };
 
 module.exports = NotesController;
