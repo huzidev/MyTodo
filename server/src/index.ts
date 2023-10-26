@@ -17,7 +17,7 @@ server.use(require("@routes/notes"));
 
 server.use(
   cors({
-    origin: "*",
+    origin: "*"
   })
 );
 
