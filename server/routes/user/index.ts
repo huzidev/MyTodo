@@ -11,7 +11,7 @@ router.use(
 );
 
 router.post("/contact", UserController.Contact);
-router.put("/updateuser/:id", Verification, UserController.Update);
+router.put("/update/:id", Verification, UserController.Update);
 router.get("/about", Verification, UserController.About);
 
 module.exports = router;
