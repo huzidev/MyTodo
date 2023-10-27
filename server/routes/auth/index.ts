@@ -16,8 +16,6 @@ router.use(
 router.use(express.urlencoded({ extended: false }));
 router.use(cookie());
 
-
-
 router.post("/sign_up", AuthController.SignUp);
 router.post("/sign_in", AuthController.SignIn);
 router.get("/sign_out", AuthController.SignOut);
