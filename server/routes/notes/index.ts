@@ -13,7 +13,7 @@ router.use(
 
 router.get("/all_notes", Verification, NotesController.GetNotes);
 router.get("/completed_notes", Verification, NotesController.GetCompletedNotes);
-router.post("/addnote", Verification, NotesController.AddNote);
+router.post("/add_note", Verification, NotesController.AddNote);
 router.put("/updatenote/:id", Verification, NotesController.UpdateNote);
 router.delete("/deletenote/:id", Verification, NotesController.DeleteNote);
 
