@@ -15,6 +15,6 @@ router.get("/all_notes", Verification, NotesController.GetNotes);
 router.get("/completed_notes", Verification, NotesController.GetCompletedNotes);
 router.post("/add_note", Verification, NotesController.AddNote);
 router.put("/update_note/:id", Verification, NotesController.UpdateNote);
-router.delete("/deletenote/:id", Verification, NotesController.DeleteNote);
+router.delete("/delete_note/:id", Verification, NotesController.DeleteNote);
 
 module.exports = router;
