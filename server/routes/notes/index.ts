@@ -11,8 +11,8 @@ router.use(
   })
 );
 
-router.get("/allnotes", Verification, NotesController.GetNotes);
-router.get("/completednotes", Verification, NotesController.GetCompletedNotes);
+router.get("/all_notes", Verification, NotesController.GetNotes);
+router.get("/completed_notes", Verification, NotesController.GetCompletedNotes);
 router.post("/addnote", Verification, NotesController.AddNote);
 router.put("/updatenote/:id", Verification, NotesController.UpdateNote);
 router.delete("/deletenote/:id", Verification, NotesController.DeleteNote);
