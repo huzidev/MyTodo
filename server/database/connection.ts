@@ -1,5 +1,5 @@
 import mongoose, { ConnectOptions } from "mongoose";
-const DB = process.env.DATA!;
+const DB: string = process.env.DATA!;
 
 // try {
 //     mongoose.connect(DB, {
