@@ -10,7 +10,7 @@ const router = express.Router();
 router.use(
   cors({
     origin: "*",
-  })
+  })  
 );
 
 router.use(express.urlencoded({ extended: false }));
