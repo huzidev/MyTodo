@@ -9,7 +9,7 @@ import AddTodo from '../AddNote';
 import FilterList from '../filters/FilterList';
 import { DataType, DataTypeHold } from './types';
 
-export default function NotesItems(props: any) {
+export default function NotesItems(): JSX.Element {
     const initialStateNote = {
         id: "", 
         title: "", 
