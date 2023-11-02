@@ -1,13 +1,13 @@
 import 'antd/dist/antd.css';
 import {
-    Route,
-    BrowserRouter as Router,
-    Routes
+  Route,
+  BrowserRouter as Router,
+  Routes
 } from "react-router-dom";
+import routes from '../Router/routes';
 import UserState from '../context/UserState';
 import Error from './Error';
 import PageWrapper from './Home';
-import routes from './Router/routes';
 export default function App(): JSX.Element {
   return (
       <UserState>
