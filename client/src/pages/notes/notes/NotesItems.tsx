@@ -2,10 +2,10 @@ import { CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icon
 import { Button, Form, Input, Modal, Typography, notification } from 'antd';
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import { fetchNotes, noteAction } from '../../../../store/notes/ShowNotes/noteSlice';
 import { updateThisNote } from '../../../../store/notes/UpdateNote/updateSlice';
-import AddTodo from '../addTodo/AddTodo';
+import AddTodo from '../AddNote';
 import FilterList from '../filters/FilterList';
 import { DataType, DataTypeHold } from './Type';
 
