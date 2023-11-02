@@ -10,7 +10,6 @@ import ShowNotes from '../notes/ShowNotes';
 // );
 import NoteState from '../notes/NoteState';
 
-
 export default function FilterList(props: any): JSX.Element {
     const Location = useLocation();
     let allNotes = props.notes;

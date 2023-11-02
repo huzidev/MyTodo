@@ -3,8 +3,8 @@ import { Button, Card, Modal, notification, Typography } from 'antd';
 import { useState } from 'react';
 import { FormattedDate, IntlProvider } from 'react-intl';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from '../../../../store/hooks/hooks';
-import { deleteThisNote } from '../../../../store/notes/DeleteNote/deleteSlice';
+import { useAppDispatch } from 'store/hooks/hooks';
+import { deleteThisNote } from 'store/notes/DeleteNote/deleteSlice';
 
 export default function ShowNotes(props: any): JSX.Element {
     console.log('ShowNotes');
