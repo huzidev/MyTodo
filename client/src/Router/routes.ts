@@ -1,7 +1,7 @@
 import React from "react";
 import ROUTE_PATHS from "./paths";
 
-const HomePage = React.lazy(() => import("pages/notes/todoPage/TodoPage"));
+const HomePage = React.lazy(() => import("pages/Home"));
 const NotesItems = React.lazy(() => import("pages/notes/notes/NotesItems"));
 const Signin = React.lazy(() => import("pages/auth/Form/signin/SingIn"));
 const SignUp = React.lazy(() => import("pages/auth/Form/signup/SignUp"));

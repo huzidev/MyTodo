@@ -15,7 +15,7 @@ const color: React.CSSProperties = {
   color: 'white',
 }
 
-export default function TodoPage(): JSX.Element {
+export default function HomePage(): JSX.Element {
   const context = useContext(DataContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const breaks = Grid.useBreakpoint();
