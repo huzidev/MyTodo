@@ -9,11 +9,12 @@ export default function AppRouter(): JSX.Element {
     <UserState>
       <Router>
         <Routes>
-          {routes.map(({ Component, path }) => {
+          {routes.map(({ Component, ...route }) => {
             return (
               <Route
-                key={path}
-                path={path}
+                {...route}
+                key={route.path}
+                path={route.path}
                 element={
                   <PageWrapper>
                     <Component />
