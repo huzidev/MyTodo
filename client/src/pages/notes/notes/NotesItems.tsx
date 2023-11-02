@@ -7,7 +7,7 @@ import { fetchNotes, noteAction } from 'store/notes/ShowNotes/noteSlice';
 import { updateThisNote } from 'store/notes/UpdateNote/updateSlice';
 import AddTodo from '../AddNote';
 import FilterList from '../filters/FilterList';
-import { DataType, DataTypeHold } from './Type';
+import { DataType, DataTypeHold } from './types';
 
 export default function NotesItems(props: any) {
     const initialStateNote = {
