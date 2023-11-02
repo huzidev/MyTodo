@@ -112,7 +112,7 @@ export default function ContactPage(): JSX.Element {
           className="Dark styleMargin"
           type="number"
           name="number"
-          value={user.number}
+          value={user.number !== null ? user.number : ''}
           onChange={onChange}
           placeholder="Enter Yours Number (Optional)"
           prefix="+92"
