@@ -1,13 +1,14 @@
+import React from 'react';
 import ROUTE_PATHS from './paths';
 
- import Contact from '../Pages/Form/contact/ContactUs';
-import NotesItems from '../Pages/Todo/notes/NotesItems';
-import Home from '../Pages/Todo/todoPage/TodoPage';
-import Signin from '../pages/auth/Form/signin/SingIn';
-import SignUp from '../pages/auth/Form/signup/SignUp';
-import SignOut from '../pages/auth/signout/SignOut';
-import About from '../pages/user/about/About';
-import UpdateUser from '../pages/user/update/UpdateUser';
+const HomePage = React.lazy(() => import('pages/notes/todoPage/TodoPage'));
+const NotesItems = React.lazy(() => import('pages/notes/notes/NotesItems'));
+const Signin = React.lazy(() => import('pages/auth/Form/signin/SingIn'));
+const SignUp = React.lazy(() => import('pages/auth/Form/signup/SignUp'));
+const SignOut = React.lazy(() => import('pages/auth/signout/SignOut'));
+const Contact = React.lazy(() => import('pages/auth/contact'));
+const About = React.lazy(() => import('pages/user/about'));
+const UpdateUser = React.lazy(() => import('pages/user/update'));
 
 interface AppRoute {
     path: string;
