@@ -1,8 +1,8 @@
 import { CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Typography, notification } from 'antd';
 import React, { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks/hooks';
-import { addNoteAction, addThisNote } from '../../../../store/notes/AddNote/addNoteSlice';
+import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
+import { addNoteAction, addThisNote } from 'store/notes/AddNote/addNoteSlice';
 import { DataType } from './types';
 
 export default function AddTodo(): JSX.Element {
