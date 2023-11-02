@@ -3,7 +3,7 @@ import { Button, Form, Input, Typography, notification } from 'antd';
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks/hooks';
 import { addNoteAction, addThisNote } from '../../../../store/notes/AddNote/addNoteSlice';
-import { DataType } from './Type';
+import { DataType } from './types';
 
 export default function AddTodo(): JSX.Element {
   const noteRes = useAppSelector(state => state.addnote)
