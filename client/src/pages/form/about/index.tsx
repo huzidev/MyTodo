@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
 import { fetchUsers } from "store/user/userSlice";
 
-export default function About(props: any): JSX.Element {
+export default function AboutPage(props: any): JSX.Element {
   const context = useContext(DataContext);
   const { userData } = context;
   const { updateData } = props;

@@ -1,10 +1,10 @@
 import { CheckCircleOutlined, ExclamationCircleOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Typography, notification } from 'antd';
 import React from 'react';
-import { contactAction, sendThisMessage } from '../../../../store/form/Contact/contactSlice';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks/hooks';
+import { contactAction, sendThisMessage } from 'store/form/Contact/contactSlice';
+import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import layout from '../../../Layout/Layout';
-import { DataType } from './Type';
+import { DataType } from './types';
 
 export default function Footer(): JSX.Element {
   const contactRes = useAppSelector(state => state.contact)
