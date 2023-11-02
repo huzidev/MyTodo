@@ -1,13 +1,13 @@
-import { Button, Card, Typography } from "antd";
+import { Card, Typography } from "antd";
 import DataContext from "context/DataContext";
 import { useContext, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
 import { fetchUsers } from "store/user/userSlice";
 
-export default function AboutPage(props: any): JSX.Element {
+export default function AboutPage(): JSX.Element {
   const context = useContext(DataContext);
   const { userData } = context;
-  const { updateData } = props;
+  // const { updateData } = props;
 
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
@@ -81,7 +81,7 @@ export default function AboutPage(props: any): JSX.Element {
             <span style={fontSize}>{theme}</span>
           </Typography.Text>
         </div>
-        <Button
+        {/* <Button
           onClick={() => {
             updateData(userData);
           }}
@@ -89,7 +89,7 @@ export default function AboutPage(props: any): JSX.Element {
           type="ghost"
         >
           Update Data
-        </Button>
+        </Button> */}
       </Card>
     </>
   );
