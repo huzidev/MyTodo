@@ -17,7 +17,7 @@ interface AppRoute {
 
 const routes: AppRoute[] = [
   {
-    Component: Home,
+    Component: HomePage,
     path: ROUTE_PATHS.HOME,
   },
   {
