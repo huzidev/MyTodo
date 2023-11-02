@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
+  "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-        // for defined paths to use store/auth instead of ../store/auth
-            "store/*": ["store/*"],
-            "context/*": ["context/*"],
-            "pages/*": ["pages/*"],
-        }
+      // for defined paths to use store/auth instead of ../store/auth
+      "store/*": ["store/*"],
+      "context/*": ["context/*"],
+      "components/*": ["components/*"],
+      "pages/*": ["pages/*"]
     }
+  }
 }
