@@ -19,6 +19,7 @@ export default function TodoPage(): JSX.Element {
   const context = useContext(DataContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const breaks = Grid.useBreakpoint();
+
   return (
     <div>
       <h1>
@@ -39,7 +40,7 @@ export default function TodoPage(): JSX.Element {
         autoplaySpeed={6000}
         afterChange={(index) => setActiveIndex(index)}
       >
-        {slides.map((slide, slideIndex) => (
+        {slides.map((slide, index: number) => (
           <div key={slide.title}>
             <div key={slide.title} style={contentStyle}>
               <Col>
