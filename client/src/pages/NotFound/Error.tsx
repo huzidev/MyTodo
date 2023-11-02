@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function NotFoundPage(): JSX.Element {
   const navigate = useNavigate();
+
   return (
     <div>
       <Card>
@@ -13,12 +14,7 @@ export default function NotFoundPage(): JSX.Element {
           subTitle={`The page you are trying to access may not be available`}
           extra={
             <>
-              <Button
-                type="primary"
-                onClick={() =>
-                  navigate("/")
-                }
-              >
+              <Button type="primary" onClick={() => navigate("/")}>
                 Check More
               </Button>
               <Button type="primary" onClick={() => navigate("/")}>
@@ -29,5 +25,5 @@ export default function NotFoundPage(): JSX.Element {
         />
       </Card>
     </div>
-  )
+  );
 }
