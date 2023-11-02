@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
+import NotFoundPage from "pages/NotFound/Error";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Error from "../components/Error";
 import PageWrapper from "../components/Home";
 import UserState from "../context/UserState";
 import routes from "./routes";
@@ -23,7 +23,7 @@ export default function AppRouter(): JSX.Element {
               />
             );
           })}
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </UserState>
