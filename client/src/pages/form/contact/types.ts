@@ -1,6 +1,6 @@
 export interface DataType {
-    username: string,
-    email: string,
-    number?: number,
-    message: string
+    username: string;
+    email: string;
+    number?: number | null;
+    message: string;
 }
