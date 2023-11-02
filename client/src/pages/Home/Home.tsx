@@ -5,10 +5,10 @@ import {
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
+import { GlobalStyles } from 'components/styled-components/Global.styled';
+import DataContext from 'context/DataContext';
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { GlobalStyles } from '../../components/styled-components/Global.styled';
-import DataContext from '../../context/DataContext';
 
 interface Props {
   children: React.ReactNode;
@@ -118,9 +118,9 @@ export default function PageWrapper({ children}: Props): JSX.Element {
     theme = "light";
   }
 
-  const darkModeBG = theme === "dark" ? "#292929" : 'rgb(255 255 255)';
-  const LModeBG = theme === "dark" ? "#292929" : 'rgb(255 255 255)';
-  const darkModeC = theme === "dark" ? "white" : 'black';
+  const darkModeBG: string = theme === "dark" ? "#292929" : 'rgb(255 255 255)';
+  const LModeBG: string = theme === "dark" ? "#292929" : 'rgb(255 255 255)';
+  const darkModeC: string = theme === "dark" ? "white" : 'black';
   const transition = 'all 700ms ease-in-out';
 
   return (
