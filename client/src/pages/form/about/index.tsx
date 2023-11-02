@@ -1,8 +1,8 @@
 import { Button, Card, Typography } from 'antd';
+import DataContext from 'context/DataContext';
 import { useContext, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import { fetchUsers } from 'store/user/userSlice';
-import DataContext from '../../../context/DataContext';
 
 export default function About(props: any): JSX.Element {
     const context = useContext(DataContext);
