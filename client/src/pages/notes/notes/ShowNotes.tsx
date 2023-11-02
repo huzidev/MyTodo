@@ -7,12 +7,10 @@ import { useAppDispatch } from 'store/hooks/hooks';
 import { deleteThisNote } from 'store/notes/DeleteNote/deleteSlice';
 
 export default function ShowNotes(props: any): JSX.Element {
-    console.log('ShowNotes');
-    
     const dispatch = useAppDispatch();
     const Location = useLocation();
     const { note, updateNote } = props;
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     function deleteNote() {
         dispatch(deleteThisNote(note._id));
