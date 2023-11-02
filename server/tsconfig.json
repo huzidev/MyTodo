@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "ES6",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "module": "commonjs",                                /* Specify what module code is generated. */
@@ -7,17 +8,6 @@
 
     // BaseURL means all the paths starts from ./ therefore no need to add ./app or ./routes in paths
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    "paths": {
-      "@app/*": [
-        "app/*"
-      ],
-      "@routes/*": [
-        "routes/*"
-      ],
-      "@database/*": [
-        "database/*"
-      ]
-    },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */

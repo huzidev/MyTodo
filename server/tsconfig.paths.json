@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@routes/*": ["routes/*"],
+      "@database/*": ["database/*"]
+    }
+  }
+}
