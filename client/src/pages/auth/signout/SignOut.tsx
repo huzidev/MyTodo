@@ -1,9 +1,9 @@
+import { CheckCircleOutlined } from '@ant-design/icons';
+import { Spin, Typography, notification } from 'antd';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Spin, Typography, notification } from 'antd';
-import { CheckCircleOutlined } from '@ant-design/icons';
-import { useAppDispatch } from '../../../../store/hooks/hooks';
-import { signoutUser } from '../../../../store/form/Signout/signoutSlice';
+import { signoutUser } from '../../../store/form/Signout/signoutSlice';
+import { useAppDispatch } from '../../../store/hooks/hooks';
 
 export default function SignOut(): JSX.Element {
   const dispatch = useAppDispatch()

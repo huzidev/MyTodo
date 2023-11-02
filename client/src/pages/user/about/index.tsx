@@ -15,7 +15,7 @@ export default function AboutPage(props: any): JSX.Element {
     dispatch(fetchUsers());
   }, []);
 
-  const theme = userData.isTheme ? "Dark Mode" : "Light Mode";
+  const theme: string = userData.isTheme ? "Dark Mode" : "Light Mode";
 
   if (userData.isTheme === true) {
     localStorage.setItem("dark", "Dark-Theme");

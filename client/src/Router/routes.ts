@@ -1,13 +1,13 @@
 import ROUTE_PATHS from './paths';
 
- import About from '../Pages/Form/about/About';
-import Contact from '../Pages/Form/contact/ContactUs';
-import Signin from '../Pages/Form/signin/SingIn';
-import SignOut from '../Pages/Form/signout/SignOut';
-import SignUp from '../Pages/Form/signup/SignUp';
-import UpdateUser from '../Pages/Form/update/UpdateUser';
+ import Contact from '../Pages/Form/contact/ContactUs';
 import NotesItems from '../Pages/Todo/notes/NotesItems';
 import Home from '../Pages/Todo/todoPage/TodoPage';
+import Signin from '../pages/auth/Form/signin/SingIn';
+import SignUp from '../pages/auth/Form/signup/SignUp';
+import SignOut from '../pages/auth/signout/SignOut';
+import About from '../pages/user/about/About';
+import UpdateUser from '../pages/user/update/UpdateUser';
 
 interface AppRoute {
     path: string;
