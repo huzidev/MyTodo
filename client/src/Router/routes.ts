@@ -7,7 +7,7 @@ const Signin = React.lazy(() => import("pages/auth/Form/signin/SingIn"));
 const SignUp = React.lazy(() => import("pages/auth/Form/signup/SignUp"));
 const SignOut = React.lazy(() => import("pages/auth/signout/SignOut"));
 const Contact = React.lazy(() => import("pages/auth/contact"));
-const About = React.lazy(() => import("pages/user/about"));
+const AboutPage = React.lazy(() => import("pages/user/about"));
 const UpdateUser = React.lazy(() => import("pages/user/update"));
 
 interface AppRoute {
@@ -49,7 +49,7 @@ const routes: AppRoute[] = [
     path: ROUTE_PATHS.CONTACT,
   },
   {
-    Component: About,
+    Component: AboutPage,
     path: ROUTE_PATHS.ABOUT,
   },
   {

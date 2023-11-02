@@ -1,14 +1,14 @@
 import {
-    CheckCircleOutlined,
-    ExclamationCircleOutlined,
-    MailOutlined,
-    NumberOutlined,
-    UserOutlined,
+  CheckCircleOutlined,
+  ExclamationCircleOutlined,
+  MailOutlined,
+  NumberOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { Button, Form, Input, Modal, Typography, notification } from "antd";
 import DataContext from "context/DataContext";
 import React, { useContext, useRef, useState } from "react";
-import User from "../about";
+import AboutPage from "../about";
 import { DataType } from "./types";
 
 export default function EditUserPage(): JSX.Element {
@@ -213,7 +213,7 @@ export default function EditUserPage(): JSX.Element {
           </div>
         </Form>
       </Modal>
-      <User updateData={updateData} />
+      <AboutPage updateData={updateData} />
     </div>
   );
 }
