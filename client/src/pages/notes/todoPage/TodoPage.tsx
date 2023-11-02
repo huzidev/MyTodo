@@ -1,6 +1,6 @@
 import { Carousel, Col, Grid, Typography } from 'antd';
 import React, { useContext, useState } from 'react';
-import DataContext from '../../../Context/DataContext';
+import DataContext from '../../../context/DataContext';
 import slides from './data';
 
 const contentStyle: React.CSSProperties = {

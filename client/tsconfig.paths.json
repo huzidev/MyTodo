@@ -4,6 +4,7 @@
     "paths": {
         // for defined paths to use store/auth instead of ../store/auth
             "store/*": ["store/*"],
+            "context/*": ["context/*"],
             "pages/*": ["pages/*"],
         }
     }

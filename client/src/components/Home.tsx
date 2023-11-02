@@ -1,13 +1,13 @@
 import {
-  FileOutlined, HomeOutlined,
-  LoginOutlined, LogoutOutlined, MessageOutlined, UserOutlined
+    FileOutlined, HomeOutlined,
+    LoginOutlined, LogoutOutlined, MessageOutlined, UserOutlined
 } from '@ant-design/icons';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import DataContext from './Context/DataContext';
+import DataContext from '../context/DataContext';
 import { GlobalStyles } from './styled-components/Global.styled';
 
 interface Props {

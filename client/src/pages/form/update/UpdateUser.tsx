@@ -1,8 +1,8 @@
 import { CheckCircleOutlined, ExclamationCircleOutlined, MailOutlined, NumberOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal, Typography, notification } from 'antd';
+import DataContext from 'context/DataContext';
 import React, { useContext, useRef, useState } from 'react';
-import DataContext from '../../../Context/DataContext';
-import User from '../about/About';
+import User from '../about';
 import { DataType } from './Type';
 
 export default function UpdateUser() {
