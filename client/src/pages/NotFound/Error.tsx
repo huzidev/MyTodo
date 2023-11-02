@@ -1,7 +1,7 @@
 import { Button, Card, Result } from "antd";
 import { useNavigate } from "react-router-dom";
-export default function Error(): JSX.Element {
 
+export default function NotFoundPage(): JSX.Element {
   const navigate = useNavigate();
   return (
     <div>
