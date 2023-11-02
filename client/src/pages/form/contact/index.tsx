@@ -14,7 +14,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks/hooks";
 import layout from "./layout";
 import { DataType } from "./types";
 
-export default function Footer(): JSX.Element {
+export default function ContactPage(): JSX.Element {
   const contactRes = useAppSelector((state) => state.contact);
   const dispatch = useAppDispatch();
   let res: number | null = contactRes.res;
